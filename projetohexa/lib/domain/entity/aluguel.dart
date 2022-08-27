@@ -9,13 +9,15 @@ class Aluguel {
 
   Aluguel(this.tempoMinimo, this.tempoAluguel, this.tempoMaximo, this.precoMinuto, this.valorPagar);
 
-  double calcularValorPagar() {
+  void calcularValorPagar() {
     if (tempoMinimo > tempoAluguel) {
-      return tempoMinimo * precoMinuto;
-    } else if (tempoAluguel > tempoMaximo) {
-      return (tempoMaximo * precoMinuto) + ((tempoAluguel - tempoMaximo) * (precoMinuto * 5));
-    } else {
-      return tempoAluguel * precoMinuto;
+      valorPagar = tempoMinimo * precoMinuto;
+    } 
+    else if (tempoAluguel > tempoMaximo) {
+      valorPagar = (tempoMaximo * precoMinuto) + ((tempoAluguel - tempoMaximo) * (precoMinuto * 5));
+    } 
+    else {
+      valorPagar =  tempoAluguel * precoMinuto;
     }
   }
 }
