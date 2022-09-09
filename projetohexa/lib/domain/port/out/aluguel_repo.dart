@@ -1,7 +1,9 @@
-import 'package:projetohexa/domain/entity/aluguel.dart';
+import 'package:projetohexa/domain/dto/aluguel_dto.dart';
 
 abstract class AluguelRepo{
 
-  void salvar(Aluguel aluguel);
+  void save(AluguelDTO aluguel);
+
+  List<AluguelDTO> findAll();
 
 }
