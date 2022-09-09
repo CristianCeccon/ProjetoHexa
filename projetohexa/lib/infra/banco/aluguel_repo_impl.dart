@@ -1,8 +1,7 @@
 import 'package:projetohexa/domain/dto/aluguel_dto.dart';
-import 'package:projetohexa/domain/entity/aluguel.dart';
 import 'package:projetohexa/domain/port/out/aluguel_repo.dart';
 
-class AlguelRepoImpl extends AluguelRepo {
+class AluguelRepoImpl extends AluguelRepo {
   List<Map> dados = [
     {"precoMinuto": 5.00, "tempo": 10, "valor": 50.00},
     {"precoMinuto": 20.00, "tempo": 10, "valor": 200.00},
