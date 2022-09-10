@@ -3,8 +3,7 @@ import 'package:projetohexa/domain/dto/aluguel_dto.dart';
 import 'package:projetohexa/domain/port/in/aluguel_service.dart';
 import 'package:projetohexa/domain/port/out/aluguel_repo.dart';
 
-class AluguelServiceImpl extends AluguelService{
-
+class AluguelServiceImpl extends AluguelService {
   final AluguelRepo _repository = GetIt.I.get<AluguelRepo>();
 
   @override
@@ -14,7 +13,10 @@ class AluguelServiceImpl extends AluguelService{
 
   @override
   void salvar(AluguelDTO aluguel) {
-    _repository.save(aluguel);
-  }
+    var entity = aluguel.toEntity();
 
+    entity.calcularValorPagar();
+
+    _repository.save(entity.toDTO());
+  }
 }

@@ -1,3 +1,5 @@
+import 'package:projetohexa/domain/dto/aluguel_dto.dart';
+
 class Aluguel {
   int tempoAluguel;
   double precoMinuto;
@@ -7,6 +9,10 @@ class Aluguel {
   Aluguel(this.tempoAluguel, this.precoMinuto, this.valorPagar);
 
   void calcularValorPagar() {
-    valorPagar =  tempoAluguel * precoMinuto;
+    valorPagar = tempoAluguel * precoMinuto;
+  }
+
+  AluguelDTO toDTO() {
+    return AluguelDTO(tempoAluguel, precoMinuto, valorPagar);
   }
 }
